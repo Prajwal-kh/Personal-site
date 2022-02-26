@@ -1,0 +1,207 @@
+@media screen {
+
+/*padding increases size of box from inside, margin shifts surrounding elements of tjat box.*/
+body {
+  margin: 0;
+  /*0 doesn't have any unit*/
+  text-align: center;
+  /*Every element will be centered if we align in parent tag, but for block element after changing its width it will not get centered*/
+  font-family: 'Merriweather', serif;
+  background-color: #EEEEEE;
+  color: #40514E;
+}
+
+/*div is content division element, used to divide content into seperate containers or boxes*/
+/* try to change default property margin applied by body/h1 to 0px. First check in CSS box model at bottom in dev tools*/
+/*margin is outside part, border is outline part & padding is inside part of CSS Box*/
+div {
+  margin: 0;
+}
+
+h1 {
+  margin: 30px auto 0 auto;
+  font-family: 'Sacramento', cursive;
+  font-size: 300%;
+  /*16px = 100% = 1em*/
+  color: #66BFBF;
+  /*width :10%;  Now it will no remains in center to make it to center use margin property.
+  margin : 0 auto;   top & bottom are 0 & left-right is auto*/
+}
+span {
+  text-decoration: underline;
+}
+
+span, .inshort-h2, h2, h3, h4 {
+  color: #66BFBF;  /*#787A91*/
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+}
+p{
+  line-height: 2;
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+a {
+  color: #11999E;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 20px;
+  text-decoration: none;
+}
+a:hover{
+  color: #EAF6F6;
+}
+hr{
+  border-style: dotted;
+  border-bottom-style: none;
+  width : 5%;
+  border-width: 5px;
+  margin: 3rem auto;
+}
+.inshort-h2 {
+  font-size: 80%;
+}
+
+.profile_pic {
+  border-radius: 100%;
+  border-style: solid;
+  margin-top: 5%;
+}
+
+.intro {
+  width: 50%;
+  margin: auto;
+}
+
+.top-cloud {
+  position: absolute;
+  left: 750px;
+  top: 40px;
+}
+
+.bottom-cloud {
+  position: absolute;
+  /* to make it out of HTML Flow & to center mountain img. bottom-cloud will sits on mountain img*/
+}
+
+.skill-row {
+  width: 50%;
+  margin: 80px auto;
+  /*To center our shifted elements by width :50% property*/
+  text-align: left;
+  line-height: 2;
+}
+
+/*To change size of images we can use width property*/
+.web-dev, .salesforce, .java {
+  width: 25%;
+  /*related to its parent div skill-row.*/
+  float: left;
+  /*Use float property to wrap text around right of the images*/
+  margin-right: 30px;
+  border-radius: 100%;
+}
+.copyright{
+  font-size: 0.75rem;
+  color: #EAf6F6;
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+/*
+.skills-description{
+  clear: left; clears anything in left of the text (opposite of float property)
+}
+*/
+/* Display property used to Display element as Block, Inline, inline-block & None. Block element takes all the width of page
+   where as inline elements takes only required space & other element can sits inline.*/
+.top-container {
+  background-color: #e4f9f5;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+
+.bottom-container {
+  background-color: #66BFBF;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.contact-me{
+  margin: 40px auto;
+}
+.btn{
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 20px;
+  font-family: sans-serif;
+  color: #fff0ff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.btn:hover{
+  background: #1ec1d6;
+  background-image: -webkit-linear-gradient(top, #1ec1d6, #66BFBF);
+  background-image: -moz-linear-gradient(top, #1ec1d6, #66BFBF);
+  background-image: -ms-linear-gradient(top, #1ec1d6, #66BFBF);
+  background-image: -o-linear-gradient(top, #1ec1d6, #66BFBF);
+  background-image: linear-gradient(to bottom, #1ec1d6, #66BFBF);
+  text-decoration: none;
+}
+}
+/*
+.middle-container{
+  border : 20px solid black;
+  background-color : Red;
+  height : 200px;
+  width : 200px;
+  margin-left : 260px;
+}
+.bottom-container{
+  border : 10px solid;
+  background-color : Blue;
+  height :200px;
+  width :200px;
+  margin-left : 500px;
+}
+
+.one{
+  background-color : Red;
+  height : 150px;
+  width : 150px;
+  position : relative; //doesn't brakes flow of HTML & moves freely leaving space behind.
+  left :300px;
+}
+.two{
+  background-color : Green;
+  height : 150px;
+  width : 150px;
+  position : relative;
+  left : 150px;
+  bottom :150px;
+}
+
+.one{
+  background-color : Red;
+  height : 150px;
+  width : 150px;
+  position : absolute;  //brakes flow of HTML & moves freely without leaving space behind. Relative to parent element.
+  left :300px;
+}
+.two{
+  background-color : Green;
+  height : 150px;
+  width : 150px;
+  position : absolute;
+  left : 150px;
+  bottom :150px;
+}
+*/
